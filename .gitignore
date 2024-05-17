@@ -1,0 +1,10 @@
+auto/
+.vscode
+_minted-thesis-main
+*.bcf
+*.nlo
+*.out
+*.pdf
+*.run.xml
+*.synctex.gz
+*~

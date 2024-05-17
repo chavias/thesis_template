@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt,headinclude,titlepage,twoside,openright,final]{scrreprt}%{book}
+
+\usepackage{thesis}
+
+\usepackage[
+backend=biber,
+style=numeric-comp, %alphabetic,
+sorting=none,
+doi=false,
+isbn=false,
+url=false,
+eprint=false
+%defernumbers=true,
+]{biblatex}
+\addbibresource{./library.bib}
+
+\graphicspath{
+  {figures/chapter01}
+  {figures/chapter02}
+  {figures/chapter03}
+  {figures/chapter04}
+  {figures/chapter05}
+}
+
+\begin{document}
+
+\hypersetup{
+	colorlinks,
+	linkcolor={black!35!black},
+	citecolor={black!50!black},
+	urlcolor={black!80!black}
+}
+
+
+\include{preamble}
+\include{abstract}
+\include{chapter01}
+\include{chapter02}
+% \include{chapter03}
+% \include{chapter04}
+% \include{chapter05}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                     Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\part*{Appendix \markboth{Appendix}{Appendix}}
+\pagestyle{fancy}
+
+\include{appendix01}
+\include{appendix02}
+
+\printbibliography
+
+\include{end}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,95 @@
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 
+
+\chapter*{Abstract \markboth{Abstract}{Abstract}}
+\addcontentsline{toc}{chapter}{Abstract}
+\label{chapter:general-introducion}
+Solid-state NMR spectroscopy can provide atomic-resolution data to determine chemical structures and dynamic of solid and semi-solids. % In the last decades, there has been significant development in terms of hardware design, sample preparation and pulse schemes.
+In particular, the possibility to coherently control the spin dynamics, with radio-frequency (rf) field irradiation and sample spinning makes NMR a versatile tool, enabling a immensely rich scope of possible experiments.\\
+Using effective theories, which describe the system using time-independent (effective) Hamiltonian have proven useful to understand the underlying spin physics and design experiments.
+%The ability to describe the system with a time-independent Hamiltonian allows for a deeper understanding of the spin physics, beneficial for the developing NMR experiments.
+A theoretical framework, which has proven to be particular useful for method development in magnetic resonance is Floquet theory, which uses periodic continuation of the Hamiltonian to approximate the experimental Hamiltonian.\\
+% This thesis focuses on the development and application of effective Theories for solid-state NMR.
+In the first part of this thesis, the main objective is the
+% The main objectives of this thesis are to
+improvement of Floquet theory for magnetic resonance% and extension of its scope of application
+, in order to create a tool to analyze, as well as systematically design magnetic resonance experiments. In the second part of this thesis, the theory is applied to design chemical-shift selective pulse schemes under magic-angle spinning (MAS).\\
+%For example Floquet theory residual line width under uniform sample spinning is presented . 
+% Often this is valid approximation, since many NMR experiments consist of a repeating basic building blocks, but limits the scope of application and predictability of the effective theories significantly and introduces inaccuracies, which increase the poorer the approximation becomes.
+An introduction in basic solid-state NMR theory, including a discussion of the relevant Hamiltonians the effect of MAS, unitary transformations and traditional Floquet theory is given in Chapter \ref{chapter:intro}.
+\\
+In Chapter \ref{chapter:traditional-floquet} traditional Floquet theory is % given and subsequent
+used to predict the residual line width under MAS, supported by numerical calculation and experimental observations. 
+% However these theories have a limited scope and can only be applied in specific cases, often offering a incomplete description.
+%Although very powerful, Floquet theory has a limited scope of application, because it requires to approximate the Hamiltonian as periodic, arising from the  %, i.e. repeating indefinite times.
+\\
+In Chapter \ref{chapter:continuous-floquet}, we develop a generalization of Floquet theory, named continuous Floquet theory, that can be used to describe any magnetic resonance experiment without introducing approximations, enabling higher accuracy and a larger scope of application, than traditional Floquet theory.
+% In this thesis we develop a generalized Floquet theory, without introducing any approximation,  extending the scope to any arbitrary pulse scheme, leading to a more realistic, hence accurate description of NMR experiments. % Without any approximations 
+% Subsequently we apply continuous Floquet theory on topics of chemical-shift selective recoupling schemes
+\\
+In Chapter \ref{chapter:mirror}, we focus on the design AM-MIRROR pulses, which can generate homonuclear recoupling of selected chemical-shift differences, based on proton-driven spin diffusion. Using continuous Floquet theory developed in Chapter \ref{chapter:continuous-floquet}, we obtain a detailed understanding of spin physics. This enables us to reverse engineer the optimal pulse shape from desired chemical-shift differences.
+\\
+In Chapter \ref{chapter:chemical-shift-interaction-frame}, we explore the capabilities of the continuous Floquet theory in combination with interaction-frame transformations. % Because continuous Floquet theory is not bounded to interaction frames incorporating periodic dynamics, any choice of interaction frame is possible extending the possibilities compared to .
+On the example of symmetry-based chemical-shift selective recoupling pulse schemes, we demonstrate how different interaction frames % in combination with continuous Floquet theory 
+can be utilized, to obtain a detailed understanding of the mode of action of a pulse scheme.
+%\\
+% Focusing on chemical-shift selective pulse schemes under MAS, we demonstrate the application of continuous Floquet theory ranging from the analysis and modification of existing pulse schemes in Chapter \ref{chapter:chemical-shift-interaction-frame} to systematic design of novel highly chemical-shift selective and efficient pulse schemes in Chapter \ref{chapter:mirror} and \ref{chapter:optimization}. 
+% interaction frame trajectory
+% In chapter \ref{chapter:chemical-shift-interaction-frame} we will explore the capabilities of the new framework in combination with interaction frame trajectories.
+% %In contrast to traditional Floquet theory the possible interaction frames are not bounded to interaction frames incorporation periodic movements, enabling any choice of interaction frame and therefore many possibilities.
+% On the example of chemical-shift selective recoupling pulse schemes we demonstrate how different interaction frames in combination with continuous Floquet theory can be utilized to obtain a detailed understanding of the mode of action of the pulse scheme, which is highly dependent on the overall duration of the pulse schemes. %, a parameter not 
+%captured by traditional Floquet theory.
+% Using optimization on effective Hamiltonian
+\\
+In Chapter \ref{chapter:optimization}, we demonstrate the combination of numerical optimization with effective Hamiltonian obtained from continuous Floquet theory, reducing the computational effort greatly compared to current methods, which are based on the iteration of the Liouville-von Neumann equation. In addition, we show that optimization on effective Hamiltonians does not require to specify the details of the underlying spin system. % which likely leads to more general experiments.
+Finally we use accurate numerical methods to demonstrate the efficiency and robustness of the obtained chemical-shift selective recoupling schemes.
+% % Using % Numerical optimization methods have been applied to pulse scheme in NMR for several years, under the umbrella term optimal control for NMR. 
+% % % Optimal control for NMR, relies on solving the Liouville van Neumann equation numerically, and building a optimization algorithm on top to find a pulse scheme which leads to the desired result.
+% % % Although powerful such approaches are computationally expensive, since they require solving the Liouville van Neumann equation numerically several times, limiting the amount of feasible problems.
+% % We demonstrate  effective Hamiltonian  reduce the computational effort greatly compared to previous methods based on iterating the Liouville-van Neumann equation, and also  using a model based on effective Hamiltonian, reduces the computational cost of the optimizationexpensive technique. In addition,
+% Incorporating possible experimental imperfections, such as radio-frequency-field inhomogeneity and detuning, we arrive at effective and experimentally robust, chemical-shift selective recoupling pulse schemes.
+\chapter*{Zusammenfassung \markboth{Zusammenfassung}{Zusammenfassung}}
+
+Die Festk\"{o}rper-NMR-Spektroskopie kann Daten mit atomarer Aufl\"{o}sung zur Bestimmung der chemischen Strukturen und der Dynamik von festen und halbfesten Stoffen liefern.
+Die St\"{a}rke der NMR liegt in der F\"{a}higkeit, die Spindynamik durch Radiofrequenzbestrahlung und mechanisches Drehen der Probe koh\"{a}rent zu beeinflussen, welches eine Vielzahl von Experimenten erm\"{o}glicht.
+\\
+Die Verwendung effektiver Theorien, die das System mit einem zeitunabh\"{a}ngigen (effektiven)
+Hamiltonian beschreiben, haben sich als n\"{u}tzlich erwiesen, um die zugrunde liegende Spinphysik zu verstehen und Experimente zu entwerfen. Ein theoretischer Rahmen, der sich als besonders n\"{u}tzlich f\"{u}r die Methodenentwicklung in der magnetischen Resonanz bew\"{a}hrt hat, ist die Floquet Theorie, welche die periodische Fortsetzung des Hamiltonians verwendet, um den experimentellen Hamiltonian zu approximieren.
+\\
+Der erste Teil dieser Arbeit befasst sich mit der Weiterentwicklung der
+Floquet Theorie f\"{u}r die magnetische Resonanz, um ein Werkzeug f\"{u}r die Analyse und die systematischen Design von Experimenten zu schaffen.
+Im zweiten Teil dieser Arbeit wird die Theorie angewandt, um Pulsschemata zu designen, die selektiv gegen\"{u}ber der chemischen Verschiebung sind.
+\\
+Eine Einf\"{u}hrung in die grundlegende Festk\"{o}rper-NMR-Theorie, einschlie{\ss}lich einer Diskussion der relevanten Hamiltonians zusammen mit der Beschreibung von MAS, unit\"{a}ren Transformationen und traditioneller Floquet Theorie, wird in Kapitel \ref{chapter:intro} gegeben.
+\\
+In Kapitel \ref{chapter:traditional-floquet} wird die traditionelle Floquet Theorie verwendet um Vorhersage der Linienbreite unter MAS zu treffen, welche unterst\"{u}tzt werden von numerischen Berechnungen und experimentellen Beobachtungen.
+\\
+In Kapitel \ref{chapter:continuous-floquet} entwickeln wir eine Verallgemeinerung der Floquet Theorie, die sogenannte kontinuierliche Floquet Theorie, welche die Beschreibung beliebiger Experimente erm\"{o}glicht, ohne N\"{a}herungen zu benutzen, und damit eine h\"{o}here Genauigkeit und ein gr\"{o}{\ss}erer Anwendungsbereich als die traditionelle Floquet Theorie besitzt.
+\\
+In Kapitel \ref{chapter:mirror} fokusieren wir uns auf das Design von AM-MIRROR-Pulsen, die homonukleare Kopplung von Spins mit ausgew\"{a}hlten chemischen Verschiebungsunterschieden erm\"{o}glicht und auf protonengetriebener Spindiffusion basiert. Mit Hilfe der in Kapitel 3 entwickelten kontinuierlichen Floquet Theorie erhalten wir ein detailliertes Verst\"{a}ndnis der Spinphysik, das uns erm\"{o}glicht, optimale Pulsformen aus den chemischen Verschiebungsunterschieden zu berechnen.
+\\
+In Kapitel \ref{chapter:chemical-shift-interaction-frame} untersuchen wir das Zusammenspiel von kontinuierlicher Floquet Theorie und unit\"{a}ren Transformationen. Am Beispiel von selektiven symmetrie-basierten chemischen Pulsschemata zeigen wir, wie verschiedene Bezugssysteme genutzt werden k\"{o}nnen, um ein detailliertes Verst\"{a}ndnis der Wirkungsweise eines Pulsschemas zu erhalten.
+\\
+In Kapitel \ref{chapter:optimization} demonstrieren wir die Kombination von numerischer Optimierung mit effektiven Hamiltonians aus der kontinuierlichen Floquet Theorie. Der Rechenaufwand dieser Methode ist bedeutend geringer im Vergleich zu aktuellen Methoden, die auf der Iteration der Liouville-von
+Neumann-Gleichung basieren, und erlaubt daher eine umfangreiche Optimierung von Pulsschematas.
+Dar\"{u}ber hinaus zeigen wir, mit pr\"{a}zisen numerischen Methoden, die hohe Effektivit\"{a}t, Selektivit\"{a}t und Stabili\"{a}t der erhaltenen Pulsshemata.
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% TeX-master: "thesis-main"
+%%% End:
