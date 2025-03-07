@@ -1,5 +1,7 @@
 # LaTeX Thesis Template
 
+![LaTeX_Template](/images/Layout.png)
+
 A comprehensive LaTeX template for academic theses (Masters/PhD), designed to provide a clean, professional structure for your academic writing.
 
 ## 📋 Overview
@@ -112,6 +114,7 @@ Most LaTeX editors provide one-click compilation options:
 ### Thesis Information
 
 Edit the beginning of `thesis-main.tex` to update:
+
 - Thesis title
 - Author name
 - Department/Institution
@@ -121,6 +124,7 @@ Edit the beginning of `thesis-main.tex` to update:
 ### Page Layout and Formatting
 
 Modify `preamble.tex` to change:
+
 - Margins and page geometry
 - Font styles and sizes
 - Header and footer configuration
@@ -149,4 +153,3 @@ Contributions to improve this template are welcome. Please feel free to submit a
 ---
 
 Good luck with your thesis! 📚✨
-
