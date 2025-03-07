@@ -3,6 +3,17 @@ auto/
 _minted-thesis-main
 *.bcf
 *.nlo
+*.bbl
+*.fls
+*.log
+*.fdb_latexmk
+*.aux
+*.blg
+*.dvi
+*.lof
+*.lot
+*.toc
+*.aux
 *.out
 *.pdf
 *.run.xml

@@ -1,288 +1,118 @@
-%\documentclass[a4paper,12pt,headinclude,titlepage,oneside,final]{scrreprt}%{book}
-\newenvironment{code}{\captionsetup{type=listing}}{}
-\usepackage{lmodern} %small typing
-\usepackage{siunitx}
+% =============================
+%         
+% ============================+
 \usepackage{lipsum}
 
-% \usepackage{subcaption}
-% \DeclareSIUnit\Molar{\textsc{m}}
-%\usepackage{fixltx2e}
-\usepackage{exscale}
-\usepackage{mathrsfs}
-% \usepackage{mathtools}% superior to amsmath
-% \usepackage{amsmath}
-\usepackage{marvosym}
-\usepackage{dsfont}
-% \usepackage{cite} % changes the citations e.g. [2,4,3] -> [2-4] does not work with hyperref
-%\usepackage[square,numbers,sort&compress]{natbib} % does the same as cite but works with hyperref
-%\usepackage{hypernat}
-\usepackage{hyperref}
-\usepackage{url}
-%% setup for online png
-\hypersetup{
-	colorlinks,
-	linkcolor={red!60!black},
-	citecolor={blue!40!black},
-	urlcolor={blue!80!black}
-}
-%\usepackage[latin1]{inputenc}
-
+% =============================
+%        FONT & ENCODING
+% =============================
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\setlength{\oddsidemargin}{0.65cm}
-\setlength{\evensidemargin}{-0.65cm}
-\usepackage{upgreek} %godzijdank bestaat dit...
-\usepackage{longtable}
-\usepackage{multirow}
-\usepackage{tabu} % apparently it is very very difficult to set the width of a table to the page width of the document. I realise that I am asking for a lot since it is only 2016 AD, but thankfully there appears to be a package that does this. Who would have known? Mankind has only just set his first steps in the digital world and already now do we have these 'easy' and user friendly' solutions. An extraordinary display of human ingenuity.
-%\usepackage{dirtytalk} %quotes 
-%\setlength{\textwidth}{15.5cm}
-%\setlength{\topmargin}{0.5cm}
-%\setlength{\textheight}{23.5cm}
-%\setlength{\parindent}{0em}
+\usepackage{lmodern}  % Improved font rendering
+\usepackage{helvet}   % Sans-serif font
+
+% =============================
+%        LANGUAGE & QUOTES
+% =============================
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% =============================
+%        MATHEMATICS
+% =============================
+\usepackage{amsmath, amssymb, mathtools, mathrsfs, dsfont, exscale}
+
+% =============================
+%        GRAPHICS & FIGURES
+% =============================
+\usepackage{graphicx, svg, epstopdf, epsf, tikz}
+\usetikzlibrary{patterns,decorations}
+\usepackage{caption}
+\captionsetup[figure]{format=plain, labelsep=space, font={footnotesize},
+    labelfont={bf,footnotesize}, singlelinecheck=true, position=bottom,
+    justification=justified, margin=10pt}
+\captionsetup[table]{format=plain, labelsep=space, font={footnotesize},
+    labelfont={bf,footnotesize}, singlelinecheck=true, position=bottom,
+    justification=justified, margin=10pt}
+
+% =============================
+%        TABLES
+% =============================
+\usepackage{booktabs, multirow, tabu, tabularx, longtable}
+\usepackage{rotating, lscape}  % Rotate tables & landscape mode
+
+% =============================
+%        CODE LISTINGS
+% =============================
+\usepackage[numbered,framed]{matlab-prettifier} % For MATLAB code formatting
+% \usepackage{minted}  % Uncomment for better code highlighting
+
+% =============================
+%        REFERENCES & LINKS
+% =============================
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={red!60!black},
+    citecolor={blue!40!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{url}
+
+% =============================
+%        LISTS & ENUMERATION
+% =============================
+\usepackage{enumerate, placeins, afterpage}
 \setcounter{tocdepth}{3}	% includes down to subsection
 \setcounter{secnumdepth}{3}
 
-%\usepackage[square]{natbib}
-%\setcitestyle{numbers,square}
-% \usepackage{biblatex} 
 
-% === Use Packages
-%\include{./packages/packages}
-\usepackage[T1]{fontenc}
-\usepackage[numbered,framed]{matlab-prettifier}
-\usepackage{booktabs} %nicer tables
-\usepackage{setspace}
+% =============================
+%        NOMENCLATURE
+% =============================
 \usepackage{nomencl}
-\usepackage{multirow} % joining rows and columns in tables
-\usepackage{rotating} % rotating text (used in tables)
-\usepackage{tabularx}
-\usepackage{lscape} % for landscape tables
-\usepackage{appendix} % more functions on the \appendix command (e.g. subappendices enviroment)
-\usepackage{placeins}
-\usepackage{afterpage}
-\usepackage{enumerate}
-\usepackage{braket}
-\usepackage{pdfpages}
-\usepackage{booktabs}
-\usepackage{rotating}
-%\usepackage[cal=esstix,frak=pxtx]{mathalfa}
-\usepackage{tikz}
-\usetikzlibrary{patterns,decorations}
-\usepackage{epsf} 
-\usepackage{breakcites}
-\usepackage{microtype}
-\usepackage{float}
-\usepackage{amssymb}
-\usepackage{mathtools}
-%\usepackage{makecell}
-\usepackage{amsmath,amssymb}
-%\usepackage{accents}
-%\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
-%\definecolor{mylilas}{RGB}{170,55,241}
-%\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
-%
-% for displaying code
-\usepackage{minted}
-%\usepackage{fontspec}
-%\setmonofont{Consolas}
-% for continuous floquet
-\usepackage{tikz}
-\usetikzlibrary{decorations.markings}
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}
-
-\raggedbottom
-
-% Hurenkinder und Schusterjungen verhindern
-\clubpenalty10000
-\widowpenalty10000
-\displaywidowpenalty=10000
-
-\def\undertilde#1{\mathord{\vtop{\ialign{##\crcr
-$\hfil\displaystyle{#1}\hfil$\crcr\noalign{\kern1.5pt\nointerlineskip}
-$\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
-% bibliography related
-%\bibliographystyle{biophysj} %IEEEtran elsart-num biophysj (unsrtnat)
-%\bibliographystyle{biophysj}
-%graphics
-%\usepackage{psfrag}
-\usepackage[SF,sf,bf]{subfigure}
-\usepackage{graphicx}
-\usepackage{epstopdf}
-\usepackage{svg}
-\usepackage{quotchap}
-
-%\epstopngsetup{update}
-
-
-%\DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{`gunzip -c #1}
-
-%make the fucking spacing in matrices
-\makeatletter
-\renewcommand*\env@matrix[1][\arraystretch]{%
-  \edef\arraystretch{#1}%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{*\c@MaxMatrixCols c}}
-\makeatother
-
-% spectra postprocessing
-% label axes properly
-\newcommand{\carbonaxis}[1]{\psfrag{#1}[Bc][Bc]{$\delta$(\carbonsf)\textsf{/ppm}}}
-\newcommand{\protonaxis}[1]{\psfrag{#1}[Bc][Bc]{$\delta$(\protonsf)\textsf{/ppm}}}
-\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$}}
-% =====caption styling: style them in serif fonts with the label bold, justified and a margin of 10pt on each side
-\usepackage{caption}
-%\captionsetup[figure]{format=plain,labelsep=space,font={sf,footnotesize}, labelfont={sf,bf,footnotesize}, singlelinecheck=true, position=bottom, justification=justified,margin=10pt}
-\captionsetup[figure]{format=plain,labelsep=space,font={footnotesize}, labelfont={bf,footnotesize}, singlelinecheck=true, position=bottom, justification=justified,margin=10pt}
-\captionsetup[table]{format=plain,labelsep=space,font={footnotesize}, labelfont={bf,footnotesize}, singlelinecheck=true, position=bottom, justification=justified,margin=10pt}
-% define new label format for continued figures, e.g. it inserts a (cont.) after the number
-% but before the label separator
-\DeclareCaptionLabelFormat{cont}{#1 #2\,(cont.)}
-%\usepackage[bf]{titlesec}
-%\titlelabel{\thechapter.\quad}
-%\renewcommand{\thechapter}{\Roman{chapter}}
-%for creating a list of used abbreviations
-%format: \nomenclature{symbol}{explanation}
-%\usepackage[intoc]{nomencl}
-\usepackage{nomencl}
-
 \makenomenclature
 \renewcommand{\nomname}{Abbreviations}
-%fonts:
-%\usepackage{mathptmx} % serif
-\usepackage{helvet}   % sans serif
-%\usepackage{fourier}
-%headings:
-\usepackage{fancyhdr} %nicer headings
+
+% =============================
+%        PAGE LAYOUT
+% =============================
+\usepackage{fancyhdr} % Nicer headers
+\usepackage{quotchap} % Fancy chapter headings
+\usepackage{setspace} % Line spacing
+\usepackage{parskip}  % No indentation
+\usepackage{geometry} % Page layout
+\setlength{\oddsidemargin}{0.65cm}
+\setlength{\evensidemargin}{-0.65cm}
+\setcounter{tocdepth}{3}   % Includes down to subsection
+\setcounter{secnumdepth}{3} % Numbering down to subsection
 \pagestyle{fancy}     % muss vor \renewcommand{\sectionmark} stehen
 \fancyhf{}
-\fancyhead[EL]{\thepage}  % gerade Seiten, links
-\fancyhead[ER]{\leftmark} % gerade Seiten, rechts
-\fancyhead[OL]{\rightmark}% ungerade Seiten, links
-\fancyhead[OR]{\thepage}  % ungerade Seiten, rechts
+\fancyhead[EL]{\thepage}  % even pages, left
+\fancyhead[ER]{\leftmark} % even pages, right
+\fancyhead[OL]{\rightmark}% odd pages, left
+\fancyhead[OR]{\thepage}  % odd pages, right
 \renewcommand{\chaptermark}[1]{
 \markboth{\thechapter{} #1}{}
 }
 \renewcommand{\sectionmark}[1]{
 \markright{\thesection{} #1}
 }
-\usepackage{color, colortbl} %colour tables
-%\usepackage{courier}  %makes \texttt{} (for fixed width) look slightly different
-\usepackage{gensymb}
-\usepackage{setspace}
-%\renewcommand{\nomname}{Abbreviations}
-\setlength{\nomitemsep}{-\parsep}
-\setlength{\nomlabelwidth}{.25\hsize}
 
-%\makeglossary
+% =============================
+%        TWEAKS & FIXES
+% =============================
+\usepackage{microtype} % Improves spacing
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+\raggedbottom % Prevents excessive white space
 
-%declare new math alphabet using Helvetica
-\DeclareMathAlphabet{\mathhelv}{T1}{phv}{m}{n}
-\DeclareMathAlphabet{\mathhelvbf}{T1}{phv}{b}{n}
-
-\onehalfspacing
-
-%other abbreviations
-\newcommand{\etal}{\emph{et~al.}}
-\newcommand{\Etal}{\emph{et~al.} }
-
-%Definition for 13C, 15N, 1H etc.
-\newcommand{\nitrogen}{$^{15}$N}
-\newcommand{\carbon}{$^{13}$C}
-\newcommand{\proton}{$^{1}$H}
-\newcommand{\deuterium}{$^{2}$H}
-\newcommand{\phosphorus}{$^{31}$P}
-
-%% biochemistry definitions
-\newcommand{\alf}{AlF$_{4}^{-}$}
-\newcommand{\HN}{H$^{\textrm{N}}$}
-\newcommand{\HA}{H$^{\upalpha}$}
-
-\newcommand{\asyn}{$\upalpha$-synuclein}
-\newcommand{\ab}{A$\upbeta$ }
-\newcommand{\bendo}{\ensuremath{\beta}-endorphin}
-
-\newcommand{\Asyn}{\textalpha{}-synuclein}
-\newcommand{\Hets}{HET-s (218 - 289)}
-\newcommand{\Bendo}{\ensuremath{\beta}-endorphin}
-\newcommand{\abeta}{amyloid-\ensuremath{\beta}}
-\newcommand{\Abeta}{amyloid-\ensuremath{\beta}}
-
-\newcommand{\bsheet}{\ensuremath{\beta}-sheet }
-\newcommand{\bstrand}{\ensuremath{\beta}-strand }
-\newcommand{\bstrands}{\ensuremath{\beta}-strands }
-\newcommand{\ahelical}{\ensuremath{\alpha}-helical }
-\newcommand{\ahelix}{\ensuremath{\alpha}-helix }
-\newcommand{\Bsheet}{\ensuremath{\beta}-sheet}
-\newcommand{\Bstrand}{\ensuremath{\beta}-strand}
-\newcommand{\Bstrands}{\ensuremath{\beta}-strands}
-\newcommand{\Ahelical}{\ensuremath{\alpha}-helical}
-\newcommand{\Ahelix}{\ensuremath{\alpha}-helix}
-\newcommand{\calpha}{C\ensuremath{\alpha} }
-\newcommand{\cbeta}{C\ensuremath{\beta} }
-\newcommand{\cgamma}{C\ensuremath{\gamma} }
-\newcommand{\ccarb}{CO }
-\newcommand{\cdelta}{C\ensuremath{\delta} }
-\newcommand{\cepsilon}{C\ensuremath{\epsilon} }
-\newcommand{\czeta}{C\ensuremath{\zeta} }
-\newcommand{\halpha}{H\ensuremath{\alpha} }
-\newcommand{\hbeta}{H\ensuremath{\beta} }
-\newcommand{\Calpha}{C\ensuremath{\alpha}}
-\newcommand{\Cbeta}{C\ensuremath{\beta}}
-\newcommand{\Cgamma}{C\ensuremath{\gamma}}
-\newcommand{\Ccarb}{CO}
-\newcommand{\Cdelta}{C\ensuremath{\delta}}
-\newcommand{\Cepsilon}{C\ensuremath{\epsilon}}
-\newcommand{\Czeta}{C\ensuremath{\zeta}}
-\newcommand{\Halpha}{H\ensuremath{\alpha}}
-\newcommand{\Hbeta}{H\ensuremath{\beta}}
-\newcommand{\UL}{[$^{13}$C,$^{15}$N]}
-
-% math shortcuts
-\newcommand{\HH}{\mathcal{H}}
-\newcommand{\ind}{\textrm{ind}}
-\newcommand{\iso}{\textrm{iso}}
-\newcommand{\eff}{\textrm{eff}}
-\newcommand{\M}{\textrm{M}}
-\newcommand{\UU}{\textrm{U}}
-\newcommand{\rf}{\textrm{rf}}
-\newcommand{\dd}{\textrm{d}}
-\newcommand{\LL}{\textrm{L}}
-\newcommand{\JJ}{\textrm{J}}
-\newcommand{\KK}{\textrm{K}}
-\newcommand{\rr}{\textrm{r}}
-\newcommand{\II}{\textrm{I}}
-\newcommand{\RR}{\textrm{R}}
-\newcommand{\AAA}{\textrm{A}}
-\newcommand{\Fou}{\mathcal{F}}
-\newcommand{\iFou}{\mathcal{F}^{-1}}
-\newcommand{\MM}{\textrm{M}}
-\newcommand{\CSA}{\textrm{CSA}}
-\newcommand{\CS}{\textrm{CS}}
-\newcommand{\IS}{\textrm{IS}}
-\newcommand{\SSS}{\textrm{S}}
-\newcommand{\tr}{\textrm{tr}}
-\newcommand{\diag}{\textrm{diag}}
-\newcommand{\rel}{\textrm{rel}}
-\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bfseries ++}}}
-
-\hyphenation{spec-tros-co-py}
-\hyphenation{qua-dru-po-lar}
-\hyphenation{ho-mo-nu-clear}
-\hyphenation{con-for-ma-tion}
-\hyphenation{synu-clein-opa-thies}
-\hyphenation{Ra-dio-fre-quenz-spu-le}
-%\usepackage{listings}
-%\hyphenation{po-la-ri-za-tion}
-%\includeonly{abstract,end}
-%\usepackage{bigfoot} % to allow verbatim in footnote
-
-
-
-% Colors
-\definecolor{forestgreen(web)}{rgb}{0.13, 0.55, 0.13}
-
-
-% Operators and friends
-\newcommand{\Iex}{\emph{I}\ensuremath{_{\text{ex}}}}
+% =============================
+%        CUSTOM COMMANDS
+% =============================
+\newcommand{\undertilde}[1]{\mathord{\vtop{\ialign{##\crcr
+    $\hfil\displaystyle{#1}\hfil$\crcr
+    \noalign{\kern1.5pt\nointerlineskip}
+    $\hfil\tilde{}\hfil$\crcr
+    \noalign{\kern1.5pt}}}}}
